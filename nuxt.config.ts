@@ -29,8 +29,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   runtimeConfig: {
-    public: {
-      apiUrl: ''
-    }
+    apiUrl: '',
+    accessToken: ''
   }
 })
