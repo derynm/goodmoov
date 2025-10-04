@@ -8,7 +8,11 @@
           <p>All right reserved</p>
         </div>
         <ul>
-          <li v-for="(menu, index) in menus" :key="index" class="text-right">
+          <li
+            v-for="(menu, index) in menus"
+            :key="index"
+            class="text-right leading-6"
+          >
             <a href="#">{{ menu }}</a>
           </li>
         </ul>
