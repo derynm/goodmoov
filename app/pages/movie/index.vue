@@ -20,7 +20,7 @@
       class="bg-[#543B85] rounded-sm px-6 py-2 mx-auto my-12 text-white block"
       @click="page++"
     >
-      Load More
+      Load Moreho
     </button>
   </div>
 </template>
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import type { Movie, MovieList } from '~/types'
 
-const page = ref(1)
+const page = ref<number>(1)
 const movies = ref<Movie[]>([])
 const route = useRoute()
 const router = useRouter()
@@ -41,13 +41,9 @@ const { data: movieList } = useFetchApi<MovieList>('discover/movie', {
   watch: [page]
 })
 
-watch(
-  movieList,
-  (newData) => {
-    if (newData?.results) {
-      movies.value.push(...newData.results)
-    }
-  },
-  { immediate: true }
-)
+watch(movieList, (newData) => {
+  if (newData?.results) {
+    movies.value.push(...newData.results)
+  }
+})
 </script>
