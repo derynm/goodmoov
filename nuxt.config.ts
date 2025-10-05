@@ -6,6 +6,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxt/fonts'],
   css: ['~/assets/css/main.css'],
+  app: {
+    head: {
+      title: 'goodmoov'
+    }
+  },
   fonts: {
     families: [
       {
