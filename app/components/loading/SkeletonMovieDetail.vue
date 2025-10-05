@@ -21,7 +21,7 @@
 
     <div class="space-y-4">
       <div class="h-6 bg-gray-700 rounded w-16"></div>
-      <div class="flex overflow-x-auto gap-2">
+      <div class="flex overflow-x-auto gap-2 -mx-6 md:mx-0">
         <div
           v-for="i in 5"
           :key="i"
@@ -37,7 +37,7 @@
 
     <div class="space-y-4">
       <div class="h-6 bg-gray-700 rounded w-32"></div>
-      <LoadingSkeletonMovieList />
+      <LoadingSkeletonMovieList class="-mx-6 md:mx-0" />
     </div>
   </div>
 </template>
