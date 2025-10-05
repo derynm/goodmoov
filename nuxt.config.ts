@@ -4,20 +4,27 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/fonts'],
+  modules: ['@nuxt/eslint'],
   css: ['~/assets/css/main.css'],
   app: {
     head: {
       title: 'goodmoov'
     }
   },
-  fonts: {
-    families: [
+  head: {
+    link: [
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
       {
-        name: 'Poppins',
-        provider: 'google',
-        weights: [300, 400, 500, 600, 700],
-        display: 'swap'
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap',
+        media: 'print',
+        onload: "this.media='all'"
       }
     ]
   },
