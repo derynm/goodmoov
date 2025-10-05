@@ -1,28 +1,37 @@
 <template>
-  <div>
-    <ListHorizontalMovie
-      v-if="latestList?.results.length"
-      :movie-list="latestList"
+  <div class="space-y-6">
+    <ListHorizontalGenre
+      v-if="genreList?.genres"
+      class="-mx-6"
+      :genre-list="genreList.genres"
     />
+
+    <div>
+      <AppTitle as="h3" class="mb-2"> Popular </AppTitle>
+      <ListHorizontalMovie
+        v-if="popuplarList?.results.length"
+        class="-mx-6"
+        :movie-list="popuplarList"
+      />
+    </div>
+
+    <div>
+      <AppTitle as="h3" class="mb-2"> Latest </AppTitle>
+      <ListHorizontalMovie
+        v-if="latestList?.results.length"
+        class="-mx-6"
+        :movie-list="latestList"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { MovieLatestList } from '~/types'
+import type { GenreList, MovieLatestList, MovieList } from '~/types'
 
-// const { data: popuplarList } = useFetchApi('discover/movie', {
-//   query: {
-//     sort_by: 'popularity.desc'
-//   }
-// })
-const { data: latestList } = useFetchApi<MovieLatestList>('discover/movie', {
-  query: {
-    sort_by: 'popularity.desc',
-    with_release_type: '2|3',
-    'release_date.gte': '2025-08-03',
-    'release_date.lte': '2025-10-16"'
-  }
-})
+const { data: genreList } = useFetchApi<GenreList>('genre/movie/list')
+const { data: popuplarList } = useFetchApi<MovieList>('movie/popular')
+const { data: latestList } = useFetchApi<MovieLatestList>('movie/now_playing')
 </script>
 
 <style scoped></style>

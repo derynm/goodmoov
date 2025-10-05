@@ -1,9 +1,9 @@
 <template>
-  <div class="flex overflow-x-auto h-full gap-2">
+  <div class="flex overflow-x-auto h-full gap-2 snap-x">
     <CardMovie
       v-for="movieItem in props.movieList?.results"
       :key="movieItem.id"
-      class="shrink-0"
+      class="shrink-0 first:ml-6 last:mr-6 snap-center"
       :movie="movieItem"
     />
   </div>
