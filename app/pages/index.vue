@@ -31,9 +31,11 @@
 <script setup lang="ts">
 import type { GenreList, Movie, MovieLatestList, MovieList } from '~/types'
 
-const { data: genreList } = useFetchApi<GenreList>('genre/movie/list')
-const { data: popuplarList } = useFetchApi<MovieList>('movie/popular')
-const { data: latestList } = useFetchApi<MovieLatestList>('movie/now_playing')
+const { data: genreList } = useFetch<GenreList>('/api/3/genre/movie/list')
+const { data: popuplarList } = useFetch<MovieList>('/api/3/movie/popular')
+const { data: latestList } = useFetch<MovieLatestList>(
+  '/api/3/movie/now_playing'
+)
 
 const listBanner = computed(() => {
   return popuplarList.value?.results

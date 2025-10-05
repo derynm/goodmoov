@@ -1,10 +1,10 @@
 <template>
-  <NuxtLink class="text-white max-w-40 space-y-1">
+  <NuxtLink :to="`movie/${movie.id}`" class="text-white max-w-40 space-y-1">
     <div class="relative">
       <img
         :src="imageTMDB(props.movie.poster_path)"
         :alt="props.movie.original_title"
-        class="w-full object-contain"
+        class="w-40 object-contain bg-[#303743] h-60"
       />
       <span
         class="absolute bottom-0 right-0 bg-[#00000080] p-2 text-xs font-light"
