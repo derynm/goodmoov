@@ -33,7 +33,7 @@ const movies = ref<Movie[]>([])
 const route = useRoute()
 const router = useRouter()
 
-const { data: movieList } = await useFetchApi<MovieList>('discover/movie', {
+const { data: movieList } = useFetchApi<MovieList>('discover/movie', {
   query: {
     with_genres: route.query.genre,
     page
