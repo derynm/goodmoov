@@ -25,21 +25,24 @@
 
       <div class="space-y-4">
         <AppTitle as="h3">Overview</AppTitle>
-        <p>{{ movieDetail?.overview }}</p>
+        <p>
+          {{ movieDetail?.overview || 'Sorry, no overviews for this movie' }}
+        </p>
       </div>
 
       <div class="space-y-4">
         <AppTitle as="h3">Cast</AppTitle>
         <CastHorizontalList
-          :cast-list="movieDetail?.credits.cast!"
+          v-if="movieDetail?.credits.cast.length"
+          :cast-list="movieDetail?.credits.cast"
           class="-mx-6 md:mx-0"
         />
+        <p v-else>Sorry, but the cast for this movie is unknown.</p>
       </div>
 
-      <div class="space-y-4">
+      <div v-if="movieDetail?.recommendations.results" class="space-y-4">
         <AppTitle as="h3" class="mb-2"> Recommended </AppTitle>
         <ListHorizontalMovie
-          v-if="movieDetail?.recommendations.results"
           class="-mx-6 md:mx-0"
           :movie-list="movieDetail?.recommendations"
         />

@@ -5,7 +5,17 @@
       :key="cast.id"
       class="shrink-0 first:ml-6 last:mr-6 md:first:ml-0 md:last:mr-0 snap-center w-20 space-y-2"
     >
-      <img class="h-28 w-full" :src="imageTMDB(cast.profile_path)" />
+      <img
+        v-if="cast.profile_path"
+        class="h-28 w-full"
+        :src="imageTMDB(cast.profile_path)"
+      />
+      <img
+        v-else
+        class="h-28 w-full"
+        src="../assets/images/default-profile.png"
+        :alt="cast.name"
+      />
       <p class="text-center text-xs">{{ cast.name }}</p>
     </div>
   </div>

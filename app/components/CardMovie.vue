@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`movie/${movie.id}`" class="text-white max-w-40 space-y-1">
+  <NuxtLink :to="`/movie/${movie.id}`" class="text-white max-w-40 space-y-1">
     <div class="relative">
       <img
         :src="imageTMDB(props.movie.poster_path)"
