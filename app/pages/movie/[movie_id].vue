@@ -34,7 +34,7 @@
       </div>
 
       <div class="space-y-4">
-        <AppTitle as="h3" class="mb-2"> Latest </AppTitle>
+        <AppTitle as="h3" class="mb-2"> Recommended </AppTitle>
         <ListHorizontalMovie
           v-if="movieDetail?.recommendations.results"
           class="-mx-6"
