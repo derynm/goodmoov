@@ -14,7 +14,7 @@
 
         <div class="space-y-2">
           <p class="text-xs font-light">{{ year }}</p>
-          <h2 class="text-xl">{{ movieDetail?.title }}</h2>
+          <h2 class="text-xl md:text-3xl">{{ movieDetail?.title }}</h2>
           <p class="text-xs">{{ genres }}</p>
           <p class="text-xs">{{ duration }}</p>
         </div>
@@ -29,7 +29,7 @@
         <AppTitle as="h3">Cast</AppTitle>
         <CastHorizontalList
           :cast-list="movieDetail?.credits.cast!"
-          class="-mx-6"
+          class="-mx-6 md:mx-0"
         />
       </div>
 
@@ -37,7 +37,7 @@
         <AppTitle as="h3" class="mb-2"> Recommended </AppTitle>
         <ListHorizontalMovie
           v-if="movieDetail?.recommendations.results"
-          class="-mx-6"
+          class="-mx-6 md:mx-0"
           :movie-list="movieDetail?.recommendations"
         />
       </div>

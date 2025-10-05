@@ -7,7 +7,10 @@
       }}</AppTitle>
     </div>
 
-    <div v-if="movies.length" class="grid grid-cols-2 gap-y-4">
+    <div
+      v-if="movies.length"
+      class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-4"
+    >
       <CardMovie
         v-for="movieItem in movies"
         :key="movieItem.id"

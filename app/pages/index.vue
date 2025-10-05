@@ -4,7 +4,7 @@
 
     <ListHorizontalGenre
       v-if="genreList?.genres"
-      class="-mx-6"
+      class="-mx-6 md:mx-0"
       :genre-list="genreList.genres"
     />
 
@@ -12,7 +12,7 @@
       <AppTitle as="h3" class="mb-2"> Popular </AppTitle>
       <ListHorizontalMovie
         v-if="popuplarList?.results.length"
-        class="-mx-6"
+        class="-mx-6 md:mx-0"
         :movie-list="popuplarList"
       />
     </div>
@@ -21,7 +21,7 @@
       <AppTitle as="h3" class="mb-2"> Latest </AppTitle>
       <ListHorizontalMovie
         v-if="latestList?.results.length"
-        class="-mx-6"
+        class="-mx-6 md:mx-0"
         :movie-list="latestList"
       />
     </div>
