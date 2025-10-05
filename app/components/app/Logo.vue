@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white relative">
+  <div class="text-white relative md:text-2xl">
     <span class="text-[#944FFA]">good</span
     ><span class="border-b-2 border-[#944FFA]">moov</span>
   </div>
