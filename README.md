@@ -1,75 +1,56 @@
-# Nuxt Minimal Starter
+# goodmoov 
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Demo:** [goodmoov.netlify.app](https://goodmoov.netlify.app)
 
-## Setup
 
-Make sure to install dependencies:
+## Tech Stack
 
+- **Framework:** Nuxt 4
+- **Styling:** Tailwind CSS 4
+- **Package Manager:** pnpm
+- **API:** The Movie Database (TMDB)
+- **Deployment:** Netlify
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm
+- TMDB Access Token
+
+### Installation
+
+1. Clone the repository:
 ```bash
-# npm
-npm install
+git clone <repository-url>
+cd goodmoov
+```
 
-# pnpm
+2. Install dependencies:
+```bash
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+3. Set up environment variables:
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+NUXT_API_URL = https://api.themoviedb.org
+NUXT_ACCESS_TOKEN = xxxxxxxxx
 ```
 
-## Production
-
-Build the application for production:
-
+4. Start development server:
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm run dev
 ```
 
-Locally preview production build:
+open `http://localhost:3000` to see the local application.
 
-```bash
-# npm
-npm run preview
+## 🎯 API Configuration
 
-# pnpm
-pnpm preview
+This application use [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api) API:
 
-# yarn
-yarn preview
+1. Create an account at [TMDB](https://www.themoviedb.org/)
+2. Go to Settings > API and request API 
+3. Add your API Read Access Token to the `.env` file as `NUXT_ACCESS_TOKEN`
 
-# bun
-bun run preview
-```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
