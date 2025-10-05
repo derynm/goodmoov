@@ -28,8 +28,8 @@
           class="shrink-0 first:ml-6 last:mr-6 md:first:ml-0 md:last:mr-0"
         >
           <div class="space-y-2">
-            <div class="w-16 h-16 bg-gray-700 rounded-full"></div>
-            <div class="h-3 bg-gray-700 rounded w-16"></div>
+            <div class="w-20 h-28 bg-gray-700"></div>
+            <div class="h-3 bg-gray-700 rounded w-16 mx-auto"></div>
           </div>
         </div>
       </div>
