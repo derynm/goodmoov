@@ -20,7 +20,7 @@
       class="bg-[#543B85] rounded-sm px-6 py-2 mx-auto my-12 text-white block"
       @click="page++"
     >
-      Load Moreho
+      Load More
     </button>
   </div>
 </template>
@@ -41,9 +41,13 @@ const { data: movieList } = useFetchApi<MovieList>('discover/movie', {
   watch: [page]
 })
 
-watch(movieList, (newData) => {
-  if (newData?.results) {
-    movies.value.push(...newData.results)
-  }
-})
+watch(
+  movieList,
+  (newData) => {
+    if (newData?.results) {
+      movies.value.push(...newData.results)
+    }
+  },
+  { immediate: true }
+)
 </script>
