@@ -4,7 +4,10 @@
       <IconArrowLeft class="cursor-pointer" @click="router.back()" />
     </div>
 
-    <div class="space-y-6 text-white">
+    <div v-if="pending">
+      <LoadingSkeletonMovieDetail />
+    </div>
+    <div v-else class="space-y-6 text-white">
       <div class="flex gap-4 w-full">
         <img
           :src="imageTMDB(movieDetail?.poster_path!)"
@@ -51,7 +54,7 @@ import type { Genre, MovieDetail } from '~/types'
 const route = useRoute()
 const router = useRouter()
 
-const { data: movieDetail } = useFetch<MovieDetail>(
+const { data: movieDetail, pending } = useFetch<MovieDetail>(
   `/api/3/movie/${route.params.movie_id}`,
   {
     query: {

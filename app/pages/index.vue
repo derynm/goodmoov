@@ -1,5 +1,8 @@
 <template>
-  <div class="space-y-6">
+  <div v-if="pending" class="space-y-6">
+    <LoadingSkeletonHomePage />
+  </div>
+  <div v-else class="space-y-6">
     <CarouselBanner :items="listBanner!" />
 
     <ListHorizontalGenre
@@ -31,10 +34,18 @@
 <script setup lang="ts">
 import type { GenreList, Movie, MovieLatestList, MovieList } from '~/types'
 
-const { data: genreList } = useFetch<GenreList>('/api/3/genre/movie/list')
-const { data: popuplarList } = useFetch<MovieList>('/api/3/movie/popular')
-const { data: latestList } = useFetch<MovieLatestList>(
+const { data: genreList, pending: genrePending } = useFetch<GenreList>(
+  '/api/3/genre/movie/list'
+)
+const { data: popuplarList, pending: popularPending } = useFetch<MovieList>(
+  '/api/3/movie/popular'
+)
+const { data: latestList, pending: latestPending } = useFetch<MovieLatestList>(
   '/api/3/movie/now_playing'
+)
+
+const pending = computed(
+  () => genrePending.value || popularPending.value || latestPending.value
 )
 
 const listBanner = computed(() => {
