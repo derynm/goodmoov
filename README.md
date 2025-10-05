@@ -23,7 +23,7 @@
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone git@github.com:derynm/goodmoov.git
 cd goodmoov
 ```
 
@@ -45,7 +45,7 @@ pnpm run dev
 
 open `http://localhost:3000` to see the local application.
 
-## 🎯 API Configuration
+## API Configuration
 
 This application use [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api) API:
 
